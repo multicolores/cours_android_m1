@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Master1-001</string>
+    <string name="text_bonjour">BonjourEnFr</string>
+    <string name="test">ValueInFr</string>
+    <string name="button2">button2TextValueFR</string>
+</resources>
