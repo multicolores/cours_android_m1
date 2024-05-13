@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class ActivityRecylerView extends AppCompatActivity {
         this.monTextView=findViewById(R.id.id_textView_recyclerview);
 
         this.lesPersonnes = initListPersonnes(100);
-        PersonneAdapter monAdapter=new PersonneAdapter(this.lesPersonnes);
+        PersonneAdapter monAdapter=new PersonneAdapter(this.lesPersonnes, itemClickListener);
         this.recyclerViewPersonne.setAdapter(monAdapter);
         this.recyclerViewPersonne.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -51,4 +52,13 @@ public class ActivityRecylerView extends AppCompatActivity {
     public void onClickQuitterDecouverteRecycler(View view) {
         finish();
     }
+
+
+    GestionClick itemClickListener = new GestionClick() {
+        @Override
+        public void onItemClick(int position) {
+            monTextView.setText(lesPersonnes.get(position).getNom());
+            Toast.makeText(ActivityRecylerView.this, "Cliqué sur position" + Integer.toString(position), Toast.LENGTH_SHORT).show();
+        }
+    };
 }

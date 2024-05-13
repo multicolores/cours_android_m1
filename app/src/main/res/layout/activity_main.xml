@@ -10,88 +10,131 @@
         android:id="@+id/id_quitter_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginBottom="260dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="9dp"
         android:onClick="onClickTestFunction"
         android:text="Quitter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginBottom="67dp"
+        android:layout_marginStart="19dp"
         android:text="@string/button2"
-        app:layout_constraintBottom_toTopOf="@+id/id_hello_text"
-        app:layout_constraintStart_toStartOf="@+id/id_hello_text" />
+        app:layout_constraintBottom_toBottomOf="@+id/id_hello_text"
+        app:layout_constraintStart_toEndOf="@+id/id_hello_text" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="81dp"
+        android:layout_marginBottom="40dp"
         android:onClick="onClickGoActivity2"
         android:text="go activity 2"
-        app:layout_constraintStart_toStartOf="@+id/id_quitter_button"
-        app:layout_constraintTop_toBottomOf="@+id/id_quitter_button" />
+        app:layout_constraintBottom_toBottomOf="@+id/id_go_activity3"
+        app:layout_constraintStart_toStartOf="@+id/id_go_activity3" />
 
     <Button
         android:id="@+id/id_go_activity3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="58dp"
         android:onClick="onClickGoActivity3"
         android:text="Go activity 3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3" />
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="@+id/button4" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="9dp"
         android:onClick="onClickGoActivityRecylerView"
         android:text="Go activity Recycler view"
-        app:layout_constraintBottom_toBottomOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="245dp"
+        android:layout_marginBottom="244dp"
+        android:onClick="onClickBROn"
+        android:text="activer broadcastR"
+        app:layout_constraintBottom_toBottomOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickBRReveille"
+        android:text="Reveille BroadcastR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="12dp"
+        android:onClick="onClickBROff"
+        android:text="desactiver broadcast"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button6" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Go activity service"
+        android:onClick="onClickGoActivityService"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
     <EditText
         android:id="@+id/id_saisie_editText"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="33dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="23dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="The text"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/id_quitter_button"
+        app:layout_constraintTop_toTopOf="@+id/id_quitter_button" />
 
     <TextView
         android:id="@+id/id_hello_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="218dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="34dp"
         android:text="@string/text_bonjour"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="185dp"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

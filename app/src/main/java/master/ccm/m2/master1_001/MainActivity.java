@@ -3,6 +3,7 @@ package master.ccm.m2.master1_001;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private Button secondsBouton;
     private EditText myEditText;
     private static final int REQUEST_CODE_OPTION_ACTIVITY3 = 1;
+
+    private MonBroadcastReceiver monBroadCastReciever;
 
 
     @Override
@@ -55,13 +58,14 @@ public class MainActivity extends AppCompatActivity {
         final Intent intentUActivity3 = new Intent(this, ThirdActivity.class);
 
         startActivityForResult(intentUActivity3, REQUEST_CODE_OPTION_ACTIVITY3);
-
     }
 
     public void onClickGoActivityRecylerView(View view) {
         final Intent intentUActivityRecycler = new Intent(this, ActivityRecylerView.class);
         startActivity(intentUActivityRecycler);
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -82,5 +86,34 @@ public class MainActivity extends AppCompatActivity {
 
     private void customShowToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void onClickBROn(View view) {
+        if(this.monBroadCastReciever==null) {
+            this.monBroadCastReciever=new MonBroadcastReceiver();
+
+            IntentFilter monIntentFilter = new IntentFilter();
+            monIntentFilter.addAction("intent_action_to-listen");
+            monIntentFilter.addCategory("android.intent.category.DEFAULT");
+
+            registerReceiver(monBroadCastReciever,monIntentFilter);
+
+        }
+    }
+
+    public void onClickBROff(View view) {
+        unregisterReceiver(monBroadCastReciever);
+    }
+
+    public void onClickBRReveille(View view) {
+        Intent monIntent = new Intent("intent_action_to-listen");
+        sendBroadcast(monIntent);
+    }
+
+
+
+    public void onClickGoActivityService(View view) {
+        startActivity(new Intent(this, ServiceActivity.class));
     }
 }

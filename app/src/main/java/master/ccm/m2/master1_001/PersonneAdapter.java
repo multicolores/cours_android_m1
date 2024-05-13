@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class PersonneAdapter extends RecyclerView.Adapter<PersonneViewHolder> {
     private List<Personne> personnes;
+    private GestionClick gestionClick;
 
-
-    public PersonneAdapter(List<Personne> personnes) {
+    public PersonneAdapter(List<Personne> personnes, GestionClick gestionClick) {
         this.personnes = personnes;
+        this.gestionClick = gestionClick;
     }
 
     @NonNull
@@ -23,7 +24,7 @@ public class PersonneAdapter extends RecyclerView.Adapter<PersonneViewHolder> {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.layout_ligne_recycler_view_personne, parent, false);
 
-        return new PersonneViewHolder(itemView);
+        return new PersonneViewHolder(itemView, gestionClick);
     }
 
     @Override
